@@ -2,7 +2,7 @@ import { Button, Navbar } from "react-bootstrap";
 import classes from './Header.module.css';
 
 
-const Header = () => {
+const Header = (props) => {
     return (
         <>
             <Navbar bg="dark" expand="sm" variant="dark" className={classes.navbar} >
@@ -10,7 +10,7 @@ const Header = () => {
                     <Navbar.Brand>HOME</Navbar.Brand>
                     <Navbar.Brand>STORE</Navbar.Brand>
                     <Navbar.Brand>ABOUT</Navbar.Brand>
-                    <Button variant="warning">Your Cart</Button>
+                    <Button variant="warning" onClick={props.onShowCart} >Your Cart</Button>
                 </header>
             </Navbar>
             <h1>The Generics</h1>
