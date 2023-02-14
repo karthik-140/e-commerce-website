@@ -1,0 +1,28 @@
+h2 {
+    text-align: center;
+    font-family: cursive;
+  }
+
+.section {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.product {
+   margin: 25px 100px 50px 100px;
+   /* margin-left: 100px;
+   margin-right: 100px; */
+} 
+
+img {
+  transition: 1s;
+}
+ 
+img:hover{
+ transform: scale(1.05,1.05) ;
+}
