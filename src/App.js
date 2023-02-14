@@ -1,8 +1,10 @@
 import {useState} from 'react';
 
 import Header from "./components/Layout/Header";
-import Album from "./components/products/Album";
+//  import Album from "./components/products/Album";
+ import AvailableProducts from './components/products/AvailableProducts';
 import Cart from "./components/Cart/Cart";
+import CartProvider from './components/store/cart-provider';
 
 function App() {
 
@@ -16,11 +18,12 @@ function App() {
   }
 
   return (
-    <>
+    <CartProvider>
       {showCart && <Cart onCloseCart={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
-      <Album />
-    </>
+      {/* <Album /> */}
+      <AvailableProducts />
+    </CartProvider>
   );
 }
 
