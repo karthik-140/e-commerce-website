@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    padding: 20px;
+    background-color: aqua;
+    display: flex;
+}
+
+.text {
+    color: white;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    /* height:1rem; */
+    display: flex;
+    justify-content: center;
+    margin-left: 10rem;
+    
+}
