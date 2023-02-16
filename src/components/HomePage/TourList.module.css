@@ -1,0 +1,41 @@
+.tours {
+    max-width: 100%;
+    margin: 0% 15% 1% 15%;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.tourlist {
+    display: flex;
+    margin: 1rem;
+    border-bottom: 1px solid black;
+    padding: 3px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.tour-date {
+   display: flex;
+   width: 10%;
+   align-items: center;
+   justify-content: center;
+}
+.tour-country {
+    display: flex;
+    width: 15%;
+    align-items: center;
+ }
+ .tour-place {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .tour-btn {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
