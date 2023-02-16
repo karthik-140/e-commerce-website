@@ -16,7 +16,7 @@ const Products = (props) => {
             <div className={classes['main-image']}>
                 {props.imageUrl}
             </div>
-            <p>$ {props.price}</p>
+            <p><b>$ {props.price}</b></p>
             <Button onClick={addItemToCart}>Add To Cart</Button>
         </li>
     )

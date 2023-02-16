@@ -47,10 +47,10 @@
     
  }
 
-a {
+.li a {
   color: white;
 }
 
-a:hover {
+.li a:hover {
    color: rgb(255, 251, 0)
 }

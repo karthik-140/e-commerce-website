@@ -10,8 +10,27 @@
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
     /* height:1rem; */
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     margin-left: 10rem;
-    
+    font-weight: bolder;
+}
+
+.footer-image {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  flex-grow: 0.65;
+  align-items:flex-end;
+}
+
+.footer-image-list {
+    display: flex;
+    gap: 5em;
+    align-items: center;
+}
+
+.footer-image-list img {
+  max-height: 40px ;
+  max-width: 35px;
 }

@@ -19,13 +19,13 @@ h2 {
    margin-right: 100px; */
 } 
 
-img {
+/* img {
   transition: 1s;
-}
+} */
  
-img:hover{
+/* img:hover{
  transform: scale(1.05,1.05) ;
-}
+} */
 
 .main-image {
   /* width: 100%; */
@@ -36,6 +36,11 @@ img:hover{
 
 .main-image img {
   object-fit: cover;
+  transition: 1s;
+}
+
+.main-image img:hover {
+  transform: scale(1.5,1.5);
 }
 
 /* .list {
@@ -50,7 +55,7 @@ img:hover{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .text{
