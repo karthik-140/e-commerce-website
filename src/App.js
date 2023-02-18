@@ -8,6 +8,7 @@ import CartProvider from './components/store/cart-provider';
 import About from './pages/AboutPage/About';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage/HomePage';
+import ContactUs from './pages/ContactPage/ContactUs';
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
   return (
     <CartProvider>
       <Header onShowCart={showCartHandler} />
+      <Route path="/contact" >
+        <ContactUs />
+      </Route>
       <Route path="/home" >
         <HomePage />
       </Route>

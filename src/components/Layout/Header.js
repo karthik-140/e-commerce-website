@@ -27,6 +27,9 @@ const Header = (props) => {
                     <li className={classes.li}>
                         <NavLink to="/about">ABOUT</NavLink>
                     </li>
+                    <li className={classes.li}>
+                    <NavLink to="/contact">Contact Us</NavLink>
+                    </li>
                 </ul>
                 <Button className={classes['cart-button']} variant="warning" onClick={props.onShowCart} >
                     Your Cart
