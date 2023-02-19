@@ -19,16 +19,16 @@ const Header = (props) => {
                 {/* <header className={classes.header}> */}
                 <ul className={classes.header}>
                     <li className={classes.li}>
-                        <NavLink to="/home">HOME</NavLink>
+                        <NavLink activeClassName={classes.active} to="/home">HOME</NavLink>
                     </li>
                     <li className={classes.li}>
-                        <NavLink to="/store">STORE</NavLink>
+                        <NavLink activeClassName={classes.active} to="/store">STORE</NavLink>
                     </li>
                     <li className={classes.li}>
-                        <NavLink to="/about">ABOUT</NavLink>
+                        <NavLink activeClassName={classes.active} to="/about">ABOUT</NavLink>
                     </li>
                     <li className={classes.li}>
-                    <NavLink to="/contact">Contact Us</NavLink>
+                    <NavLink activeClassName={classes.active} to="/contact">Contact Us</NavLink>
                     </li>
                 </ul>
                 <Button className={classes['cart-button']} variant="warning" onClick={props.onShowCart} >
