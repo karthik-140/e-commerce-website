@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 
 import Header from "./components/Layout/Header";
@@ -9,6 +9,7 @@ import About from './pages/AboutPage/About';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import ContactUs from './pages/ContactPage/ContactUs';
+import ProductDetail from './components/products/ProductDetail';
 
 
 function App() {
@@ -25,19 +26,27 @@ function App() {
   return (
     <CartProvider>
       <Header onShowCart={showCartHandler} />
-      <Route path="/contact" >
-        <ContactUs />
-      </Route>
-      <Route path="/home" >
-        <HomePage />
-      </Route>
-      <Route path="/store" >
-        {showCart && <Cart onCloseCart={hideCartHandler} />}
-        <AvailableProducts />
-      </Route>
-      <Route path="/about" >
-        <About />
-      </Route>
+      <Switch>
+        <Route path="/" exact >
+          <Redirect to="/home" />
+        </Route>
+        <Route path="/contact" >
+          <ContactUs />
+        </Route>
+        <Route path="/home" >
+          <HomePage />
+        </Route>
+        <Route path="/store" exact>
+          {showCart && <Cart onCloseCart={hideCartHandler} />}
+          <AvailableProducts />
+        </Route>
+        <Route path="/about" >
+          <About />
+        </Route>
+        <Route path="/store/:productId" >
+          <ProductDetail />
+        </Route>
+      </Switch>
       <Footer />
     </CartProvider>
   );

@@ -1,0 +1,42 @@
+.product-details {
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.product-details h4{
+   margin-left:18rem;
+}
+
+.product-section h3{
+    text-align: center;
+    font-weight:bolder ;
+    padding: 2rem;
+    font-size: 40px;
+}
+
+.product-image{
+    margin-left: 11rem;
+}
+
+.product-details p{
+    margin-left:19rem;
+    margin-top: 1rem;
+ }
+
+ .product-image {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+    background-color: aqua;
+
+  }
+  
+  .product-image img {
+    object-fit: cover;
+    transition: 1s;
+  }
+  
+  .product-image img:hover {
+    transform: scale(1.5,1.5);
+  }
