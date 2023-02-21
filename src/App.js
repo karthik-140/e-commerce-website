@@ -10,6 +10,7 @@ import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import ContactUs from './pages/ContactPage/ContactUs';
 import ProductDetail from './components/products/ProductDetail';
+import Login from './pages/LoginPage/Login';
 
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
         </Route>
         <Route path="/store/:productId" >
           <ProductDetail />
+        </Route>
+        <Route path="/auth" >
+          <Login />
         </Route>
       </Switch>
       <Footer />

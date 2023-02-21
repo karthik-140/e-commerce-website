@@ -33,11 +33,16 @@ const CartProvider = (props) => {
         totalPrice = totalPrice + Number(item.price * item.quantity);
     });
 
+    const loginHandler = (token) => {
+        localStorage.setItem('token',token);
+    }
+
     const cartContext = {
         items: items,
         totalAmount: totalPrice,
         addItem: addItemToCartHandler,
         removeItem: removeItemFromCartHandler,
+        login: loginHandler,
     }
     return (
         <CartContext.Provider value={cartContext} >

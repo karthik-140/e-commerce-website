@@ -28,7 +28,10 @@ const Header = (props) => {
                         <NavLink activeClassName={classes.active} to="/about">ABOUT</NavLink>
                     </li>
                     <li className={classes.li}>
-                    <NavLink activeClassName={classes.active} to="/contact">Contact Us</NavLink>
+                    <NavLink activeClassName={classes.active} to="/contact">CONTACT US</NavLink>
+                    </li>
+                    <li className={classes.li}>
+                    <NavLink activeClassName={classes.active} to="/auth">LOGIN</NavLink>
                     </li>
                 </ul>
                 <Button className={classes['cart-button']} variant="warning" onClick={props.onShowCart} >

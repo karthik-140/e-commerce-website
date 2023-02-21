@@ -1,0 +1,56 @@
+.login-card {
+    margin: 3rem auto;
+    width: 90%;
+    max-width: 30rem;
+    text-align: center;
+    background-color: rgb(94, 206, 221);
+    padding: 2rem 2rem 2rem 2rem;
+    border-radius: 12px;
+  }
+
+.login-card h3{
+    color: black;
+    margin: 0px 0px 0.5rem 0px;
+  }
+
+.login-email {
+    text-align: left;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.login-email input {
+    width: 100%;
+    margin: 5px 0px 10px 0px;
+    height: 2rem;
+    border-radius: 4px;
+    border-color: white;
+}
+
+.login-password {
+    text-align: left;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.login-password input {
+    width: 100%;
+    margin: 5px 0px 10px 0px;
+    height: 2rem;
+    border-radius: 4px;
+    border-color: white;
+}
+
+.login-card button{
+    background-color:white;
+    border-color: rgb(14, 189, 233);
+    font-size: larger;
+    border-radius: 8px;
+    font-weight: bolder;
+    color:  rgb(9, 196, 243);
+} 
+
+.login-card button:hover{
+    color: white;
+    background-color: rgb(9, 196, 243);
+}
