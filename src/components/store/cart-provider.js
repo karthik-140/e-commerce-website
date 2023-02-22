@@ -4,6 +4,10 @@ import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
     const [items, setItems] = useState([]);
+    let initialToken = localStorage.getItem('token');
+    const [token, setToken]= useState(initialToken);
+
+    const userIsLoggedIn = !!token;
 
     const addItemToCartHandler = (item) => {
         console.log(item)
@@ -35,6 +39,7 @@ const CartProvider = (props) => {
 
     const loginHandler = (token) => {
         localStorage.setItem('token',token);
+        setToken(token);
     }
 
     const cartContext = {
@@ -43,6 +48,7 @@ const CartProvider = (props) => {
         addItem: addItemToCartHandler,
         removeItem: removeItemFromCartHandler,
         login: loginHandler,
+        isLoggedIn: userIsLoggedIn,
     }
     return (
         <CartContext.Provider value={cartContext} >
