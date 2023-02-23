@@ -15,6 +15,7 @@ const Login = () => {
 
         const enteredEmail = emailInputRef.current.value;
         const enteredPassword = passwordInputRef.current.value;
+        authCtx.userIdentifier(enteredEmail);
 
        await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyChZiVkc1IQ751hftzGQhgtueZoJwgjZ3c', {
             method: 'POST',
@@ -39,7 +40,7 @@ const Login = () => {
         })
             .then((data) => {
                 // console.log(data);
-              authCtx.login(data.idToken);
+              authCtx.login(data.idToken, enteredEmail);
               history.replace('/store');
             })
             .catch((err) => {
