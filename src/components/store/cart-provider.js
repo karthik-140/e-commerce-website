@@ -16,17 +16,21 @@ const CartProvider = (props) => {
         setUserEmail(newUserEmail);
     }
 
-    const addItemToCartHandler = (item) => {
-        let itemsCopy = [...items];
-        let itemIndex = itemsCopy.findIndex((i) => i.title === item.title);
-        if (itemIndex === -1) {
-            setItems([...items, item]);
+    const addItemToCartHandler = async (item) => {
+        let existingItemsIdx = items.findIndex((i) => i.id === item.id);
+        if (existingItemsIdx === -1) {
+            await axios.post(`https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}`, item)
         } else {
-            itemsCopy[itemIndex].quantity++;
-            itemsCopy[itemIndex].totalPrice = itemsCopy[itemIndex].quantity * itemsCopy[itemIndex].price;
-            setItems(itemsCopy)
+            const existingCartItem = items[existingItemsIdx];
+            const id = items[existingItemsIdx]._id;
+            const updatedCartItem = { ...item, quantity: existingCartItem.quantity + 1 };
+            await axios.put(`https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}/${id}`, updatedCartItem)
         }
-        axios.post(`https://crudcrud.com/api/fb94854643ed487889afc3a81647f3ce/${userEmail}`, item)
+        const response = await axios.get(
+            `https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}`
+        )
+        const data = await response.data;
+        setItems(data);
     }
 
     useEffect(() => {
@@ -36,7 +40,7 @@ const CartProvider = (props) => {
             setToken(token);
             setUserEmail(email);
             axios.get(
-                `https://crudcrud.com/api/fb94854643ed487889afc3a81647f3ce/${userEmail}`
+                `https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}`
             ).then((res) => {
                 setItems(res.data);
             })
@@ -57,6 +61,9 @@ const CartProvider = (props) => {
     items.forEach((item) => {
         totalPrice = totalPrice + Number(item.price * item.quantity);
     });
+    // const totalPrice = items.reduce((total,item)=>{
+    //     return total + Number(item.price * item.quantity)
+    // },0)
 
     const loginHandler = (token, email) => {
         localStorage.setItem('token', token);
