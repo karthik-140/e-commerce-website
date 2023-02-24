@@ -19,15 +19,15 @@ const CartProvider = (props) => {
     const addItemToCartHandler = async (item) => {
         let existingItemsIdx = items.findIndex((i) => i.id === item.id);
         if (existingItemsIdx === -1) {
-            await axios.post(`https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}`, item)
+            await axios.post(`https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`, item)
         } else {
             const existingCartItem = items[existingItemsIdx];
             const id = items[existingItemsIdx]._id;
             const updatedCartItem = { ...item, quantity: existingCartItem.quantity + 1 };
-            await axios.put(`https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}/${id}`, updatedCartItem)
+            await axios.put(`https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}/${id}`, updatedCartItem)
         }
         const response = await axios.get(
-            `https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}`
+            `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`
         )
         const data = await response.data;
         setItems(data);
@@ -40,21 +40,26 @@ const CartProvider = (props) => {
             setToken(token);
             setUserEmail(email);
             axios.get(
-                `https://crudcrud.com/api/b5d8a75556d0425689469d571adefdec/${userEmail}`
+                `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`
             ).then((res) => {
                 setItems(res.data);
             })
         }
     }, [userEmail, token])
 
-    const removeItemFromCartHandler = (item) => {
-        const itemsCopy = [...items];
-        const idx = itemsCopy.findIndex((i) => i.title === item.title);
-
-        if (idx !== -1) {
-            itemsCopy.splice(idx, 1);
-            setItems(itemsCopy);
+    const removeItemFromCartHandler =async (item) => {
+        const existingItemsIdx = items.findIndex((i) => i.id === item.id);
+        if (existingItemsIdx !== -1) {
+            const id = items[existingItemsIdx]._id;
+           await axios.delete(
+                `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}/${id}`
+            )
         }
+        const response =await axios.get(
+            `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`
+        )
+        const data = response.data;
+        setItems(data);
     }
 
     let totalPrice = 0;

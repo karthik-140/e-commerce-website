@@ -38,6 +38,7 @@ const HomePage = () => {
 
     const tourSchedule = list.map((ele) => (
         <ToursList 
+        key={Math.random()}
         date={ele.date}
         country={ele.country}
         place={ele.place}
