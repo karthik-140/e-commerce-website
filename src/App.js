@@ -1,17 +1,17 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext, useState, lazy, Suspense } from 'react';
 
 import Header from "./components/Layout/Header";
 import AvailableProducts from './components/products/AvailableProducts';
-import Cart from "./components/Cart/Cart";
 import About from './pages/AboutPage/About';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage/HomePage';
-import ContactUs from './pages/ContactPage/ContactUs';
-import ProductDetail from './components/products/ProductDetail';
 import Login from './pages/LoginPage/Login';
 import CartContext from '../src/components/store/cart-context';
 
+const Cart = lazy(() => import('./components/Cart/Cart'));
+const ContactUs = lazy(() => import('./pages/ContactPage/ContactUs'));
+const ProductDetail = lazy(() => import('./components/products/ProductDetail'));
 
 function App() {
 
@@ -33,13 +33,15 @@ function App() {
           <Redirect to="/home" />
         </Route>
         <Route path="/contact" >
-          <ContactUs />
+          <Suspense fallback={<p>Loading...</p>} >
+            <ContactUs />
+          </Suspense>
         </Route>
         <Route path="/home" >
           <HomePage />
         </Route>
+        {showCart && <Suspense fallback={<p>Loading...</p>}><Cart onCloseCart={hideCartHandler} /></Suspense>}
         <Route path="/store" exact>
-          {showCart && <Cart onCloseCart={hideCartHandler} />}
           {authCtx.isLoggedIn && <AvailableProducts />}
           {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
@@ -47,7 +49,9 @@ function App() {
           <About />
         </Route>
         <Route path="/store/:productId" >
-          <ProductDetail />
+          <Suspense fallback={<p>Loading...</p>}>
+            <ProductDetail />
+          </Suspense>
         </Route>
         <Route path="/auth" >
           <Login />
