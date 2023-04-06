@@ -19,15 +19,15 @@ const CartProvider = (props) => {
     const addItemToCartHandler = async (item) => {
         let existingItemsIdx = items.findIndex((i) => i.id === item.id);
         if (existingItemsIdx === -1) {
-            await axios.post(`https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`, item)
+            await axios.post(`https://crudcrud.com/api/5fbd8792fec44ee4832a7a07668a48f0/${userEmail}`, item)
         } else {
             const existingCartItem = items[existingItemsIdx];
             const id = items[existingItemsIdx]._id;
             const updatedCartItem = { ...item, quantity: existingCartItem.quantity + 1 };
-            await axios.put(`https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}/${id}`, updatedCartItem)
+            await axios.put(`https://crudcrud.com/api/5fbd8792fec44ee4832a7a07668a48f0/${userEmail}/${id}`, updatedCartItem)
         }
         const response = await axios.get(
-            `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`
+            `https://crudcrud.com/api/5fbd8792fec44ee4832a7a07668a48f0/${userEmail}`
         )
         const data = await response.data;
         setItems(data);
@@ -40,7 +40,7 @@ const CartProvider = (props) => {
             setToken(token);
             setUserEmail(email);
             axios.get(
-                `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`
+                `https://crudcrud.com/api/5fbd8792fec44ee4832a7a07668a48f0/${userEmail}`
             ).then((res) => {
                 setItems(res.data);
             })
@@ -52,11 +52,11 @@ const CartProvider = (props) => {
         if (existingItemsIdx !== -1) {
             const id = items[existingItemsIdx]._id;
            await axios.delete(
-                `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}/${id}`
+                `https://crudcrud.com/api/5fbd8792fec44ee4832a7a07668a48f0/${userEmail}/${id}`
             )
         }
         const response =await axios.get(
-            `https://crudcrud.com/api/5098c292ae52474c9016666c3d81fa12/${userEmail}`
+            `https://crudcrud.com/api/5fbd8792fec44ee4832a7a07668a48f0/${userEmail}`
         )
         const data = response.data;
         setItems(data);
