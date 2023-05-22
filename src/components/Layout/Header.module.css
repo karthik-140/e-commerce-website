@@ -3,16 +3,16 @@
    position: fixed;
    display: flex;
    justify-content: center;
+   height: 3.5rem;
  }
 
  .header { 
-  margin-left: 45%;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   color: white;
-  gap: 8px;
+  gap: 2rem;
 }
 
 .li {
@@ -54,4 +54,70 @@
 .li a:hover,
 .li a.active {
    color: rgb(255, 251, 0)
+}
+
+.toggle_button{
+  position: absolute;
+  z-index: 1000;
+  right: 2rem;
+  top: 1rem;
+  width: 2.5rem;
+  height: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+
+}
+.bar{
+  width: 100%;
+  color: white;
+  height: 3px;
+  background-color: white;
+}
+
+@media screen and (max-width:768px) {
+  .header{
+    display: none;
+  }
+  .toggle_header { 
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
+    color: white;
+    gap: 8px;
+    position: absolute;
+    top: 3.3rem;
+    right: 2rem;
+    background-color: black;
+  }
+  .toggle_button{
+    display: flex;
+  }
+
+  h1{
+    font-size: 4rem;
+    height: 12rem;
+  }
+  .cart-button{
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+}
+
+@media  screen and (min-width: 768px) {
+  .toggle_header{
+    display: none;
+  }
+}
+
+@media screen and (max-width:480px) {
+  h1{
+    font-size: 2.5rem;
+    height: 10rem;
+  }
 }

@@ -39,3 +39,14 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width:768px) {
+    .tours {
+        max-width: 100%;
+        /* margin: 0% 15% 1% 15%; */
+        margin: auto;
+        padding: 1rem;
+        justify-content: center;
+        font-size: small;
+    }
+}

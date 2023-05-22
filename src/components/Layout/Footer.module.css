@@ -34,3 +34,37 @@
   max-height: 40px ;
   max-width: 35px;
 }
+
+
+@media screen and (max-width:800px) {
+  .text{
+    margin-left: 1rem;
+  }
+  .footer-image-list {
+    gap: 2em;
+}
+}
+
+@media screen and (max-width:600px) {
+  .text{
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  .footer-image-list {
+    gap: 3em;
+}
+.footer-image-list img {
+  max-height: 25px ;
+  max-width: 20px;
+}
+}
+
+@media screen and (max-width:490px) {
+  .text{
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .footer-image-list {
+    gap: 1.5em;
+}
+}
