@@ -12,7 +12,7 @@ const Header = (props) => {
 
   let quantity = 0;
   cxt.items.forEach((item) => {
-    quantity = quantity + Number(item.quantity);
+    quantity = quantity + Number(item.quantity ? item.quantity : "");
   });
 
   return (

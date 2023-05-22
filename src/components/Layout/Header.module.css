@@ -29,9 +29,11 @@
 }
 
 .cart-button {
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
   /* margin: 0px 100px 0px 10px ; */
+  margin-left: auto;
+  margin-right: 3rem;
 }
 
  h1 {
