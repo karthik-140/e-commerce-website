@@ -28,6 +28,8 @@
   height: 2rem;
   border-radius: 5px;
   /* border-color:inherit; */
+  outline: none;
+  border: 2px solid #ccc ;
 }
 
 .contact-email {
@@ -43,6 +45,8 @@
   height: 2rem;
   text-align: top;
   border-radius: 5px;
+  outline: none;
+  border: 2px solid #ccc ;
 }
 
 .contact-number {
@@ -56,6 +60,8 @@
   margin: 5px 0px 10px 0px;
   height: 2rem;
   border-radius: 5px;
+  outline: none;
+  border: 2px solid #ccc ;
 }
 
 .contact-section button{

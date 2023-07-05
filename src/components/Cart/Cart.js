@@ -11,6 +11,7 @@ const Cart = (props) => {
         <ul className={classes.card}>
             {cxt.items.map((item) => (
                 <li id={item.id} key={Math.random()} className={classes.content} >
+                    <div><img width="24px" src={item.imageUrl.props.src} alt='cart-image' /></div>
                     <div>{item.title}</div>
                     <div>$ {item.price}</div>
                     <div>{item.quantity} </div>
@@ -34,7 +35,7 @@ const Cart = (props) => {
                 <span>$ {cxt.totalAmount}</span>
             </div>
             <div className={classes.actions}>
-                <button className={classes['button--alt']}>Purchase</button>
+                <button onClick={() => alert("Ordered Successfully")} className={classes['button--alt']}>Purchase</button>
             </div>
         </Modal>
     )

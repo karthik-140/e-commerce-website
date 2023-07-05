@@ -1,4 +1,4 @@
-.product-details {
+/* .product-details {
     display: flex;
     flex-direction: column;
   
@@ -39,4 +39,34 @@
   
   .product-image img:hover {
     transform: scale(1.5,1.5);
-  }
+  } */
+
+.product-section :where(h3, h5) {
+  text-align: center;
+}
+
+.section {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem 20rem;
+  /* background-color: aquamarine; */
+}
+
+.description {
+  /* background-color: antiquewhite; */
+  flex: 1;
+}
+
+.product{
+  overflow: hidden;
+}
+
+.product-image img {
+  object-fit: cover;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.product-image img:hover {
+  transform: scale(1.5,1.5);
+}
