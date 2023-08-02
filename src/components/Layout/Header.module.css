@@ -1,8 +1,6 @@
   .navbar{
    width: 100%;
    position: fixed;
-   display: flex;
-   justify-content: center;
    height: 3.5rem;
  }
 
@@ -39,7 +37,7 @@
 h1 {
     background-color: rgb(99, 97, 97);
     color: white;
-    font-family: 'Times New Roman';
+    font-family: serif;
     font-size: 100px;
     height: 15rem;
     display: flex;
@@ -83,7 +81,6 @@ h1 {
     display: none;
   }
   .toggle_header { 
-    margin-left: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

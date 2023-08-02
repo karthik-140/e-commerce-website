@@ -22,7 +22,7 @@ const Header = (props) => {
         expand="sm"
         variant="dark"
         className={classes.navbar}
-        style={{ position: "fixed" }}
+        style={{ position: "fixed", display: "flex", justifyContent: "center", alignItems: "baseline" }}
       >
         {/* <header className={classes.header}> */}
         <button onClick={() => setShowToggleMenu(!showToggleMenu)} className={classes.toggle_button} >
@@ -33,27 +33,27 @@ const Header = (props) => {
 
         {showToggleMenu && <ul className={classes.toggle_header}>
           <li className={classes.li}>
-            <NavLink activeClassName={classes.active} to="/home">
+            <NavLink onClick={() => setShowToggleMenu(!showToggleMenu)} activeClassName={classes.active} to="/home">
               HOME
             </NavLink>
           </li>
           <li className={classes.li}>
-            <NavLink activeClassName={classes.active} to="/store">
+            <NavLink onClick={() => setShowToggleMenu(!showToggleMenu)} activeClassName={classes.active} to="/store">
               STORE
             </NavLink>
           </li>
           <li className={classes.li}>
-            <NavLink activeClassName={classes.active} to="/about">
+            <NavLink onClick={() => setShowToggleMenu(!showToggleMenu)} activeClassName={classes.active} to="/about">
               ABOUT
             </NavLink>
           </li>
           <li className={classes.li}>
-            <NavLink activeClassName={classes.active} to="/contact">
+            <NavLink onClick={() => setShowToggleMenu(!showToggleMenu)} activeClassName={classes.active} to="/contact">
               CONTACT US
             </NavLink>
           </li>
           <li className={classes.li}>
-            <NavLink activeClassName={classes.active} to="/auth">
+            <NavLink onClick={() => setShowToggleMenu(!showToggleMenu)} activeClassName={classes.active} to="/auth">
               LOGIN
             </NavLink>
           </li>

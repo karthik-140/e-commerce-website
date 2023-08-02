@@ -3,12 +3,12 @@ import { useContext, useState, lazy, Suspense } from 'react';
 
 import Header from "./components/Layout/Header";
 import AvailableProducts from './components/products/AvailableProducts';
-import About from './pages/AboutPage/About';
 import Footer from './components/Layout/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import Login from './pages/LoginPage/Login';
 import CartContext from '../src/components/store/cart-context';
 
+const About = lazy(() => import('./pages/AboutPage/About'));
 const Cart = lazy(() => import('./components/Cart/Cart'));
 const ContactUs = lazy(() => import('./pages/ContactPage/ContactUs'));
 const ProductDetail = lazy(() => import('./components/products/ProductDetail'));
@@ -46,7 +46,9 @@ function App() {
           {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
         <Route path="/about" >
-          <About />
+          <Suspense fallback={<p>Loading...</p>}>
+            <About />
+          </Suspense>
         </Route>
         <Route path="/store/:productId" >
           <Suspense fallback={<p>Loading...</p>}>
